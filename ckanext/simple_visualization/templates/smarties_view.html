@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block styles %}
+  {{ super() }}
+  {% resource 'simple_visualization/smarties.css' %}
+{% endblock %}
+{% block page %}
+<div class="smarties stats">
+
+  <div class="text-center">
+    <div class="circle"><span class="number">{{ resource_view.get('smartie_value_1') }}</span></div>
+    <div class="stats-caption">{{ resource_view.get('smartie_label_1') }}</div>
+  </div>
+
+  <div class="text-center">
+    <div class="circle"><span class="number">{{ resource_view.get('smartie_value_2') }}</span></div>
+    <div class="stats-caption">{{ resource_view.get('smartie_label_2') }}</div>
+  </div>
+
+  <div class="text-center">
+    <div class="circle"><span class="number">{{ resource_view.get('smartie_value_3') }}</span></div>
+    <div class="stats-caption">{{ resource_view.get('smartie_label_3') }}</div>
+  </div>
+
+</div>
+{% endblock %}
+
