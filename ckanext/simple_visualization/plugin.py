@@ -2,7 +2,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import logging
 
-not_empty = plugins.toolkit.get_validator('not_empty')
+ignore_missing = plugins.toolkit.get_validator('ignore_missing')
 
 class Simple_VisualizationPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer, inherit=True)
@@ -22,12 +22,12 @@ class Simple_VisualizationPlugin(plugins.SingletonPlugin):
                 'requires_datastore': False,
                 'always_available': True,
                 'schema': {
-                    'smartie_value_1': [not_empty],
-                    'smartie_value_2': [not_empty],
-                    'smartie_value_3': [not_empty],
-                    'smartie_label_1': [not_empty],
-                    'smartie_label_2': [not_empty],
-                    'smartie_label_3': [not_empty]
+                    'smartie_value_1': [ignore_missing],
+                    'smartie_value_2': [ignore_missing],
+                    'smartie_value_3': [ignore_missing],
+                    'smartie_label_1': [ignore_missing],
+                    'smartie_label_2': [ignore_missing],
+                    'smartie_label_3': [ignore_missing]
                 },
                 'default_title': plugins.toolkit._('Smarties Summary'),
                 }
